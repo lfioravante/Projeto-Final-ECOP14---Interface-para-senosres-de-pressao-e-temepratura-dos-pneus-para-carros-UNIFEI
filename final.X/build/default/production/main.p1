@@ -1,0 +1,1255 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"23 ./rgb.h
+[; ;./rgb.h: 23:  void rgbInit(void);
+[v _rgbInit `(v ~T0 @X0 0 ef ]
+"24 ./ssd.h
+[; ;./ssd.h: 24:  void ssdInit(void);
+[v _ssdInit `(v ~T0 @X0 0 ef ]
+"6 ./keypad.h
+[; ;./keypad.h: 6:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"9 ./lcd.h
+[; ;./lcd.h: 9:   void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"22 ./adc.h
+[; ;./adc.h: 22:  void adcInit(void);
+[v _adcInit `(v ~T0 @X0 0 ef ]
+"25 ./pwm.h
+[; ;./pwm.h: 25:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"5 ./lcd.h
+[; ;./lcd.h: 5:   void lcdString(char msg[]);
+[v _lcdString `(v ~T0 @X0 0 ef1`*uc ]
+"8
+[; ;./lcd.h: 8:   void lcdPosition(int line, int col);
+[v _lcdPosition `(v ~T0 @X0 0 ef2`i`i ]
+"5 ./keypad.h
+[; ;./keypad.h: 5:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"4
+[; ;./keypad.h: 4:     char kpReadKey(void);
+[v _kpReadKey `(uc ~T0 @X0 0 ef ]
+"10 main.c
+[; ;main.c: 10: void configuraPSI(void);
+[v _configuraPSI `(v ~T0 @X0 0 ef ]
+"12
+[; ;main.c: 12: void instrucaoLCD(void);
+[v _instrucaoLCD `(v ~T0 @X0 0 ef ]
+"11
+[; ;main.c: 11: void comandos(void);
+[v _comandos `(v ~T0 @X0 0 ef ]
+"3 ./lcd.h
+[; ;./lcd.h: 3:   void lcdCommand(char value);
+[v _lcdCommand `(v ~T0 @X0 0 ef1`uc ]
+"13 main.c
+[; ;main.c: 13: void infoIndividual(void);
+[v _infoIndividual `(v ~T0 @X0 0 ef ]
+"14
+[; ;main.c: 14: void infoPress(void);
+[v _infoPress `(v ~T0 @X0 0 ef ]
+"15
+[; ;main.c: 15: void infoTemp(void);
+[v _infoTemp `(v ~T0 @X0 0 ef ]
+"18
+[; ;main.c: 18: void teste(void);
+[v _teste `(v ~T0 @X0 0 ef ]
+"17
+[; ;main.c: 17: void ssdHeat(void);
+[v _ssdHeat `(v ~T0 @X0 0 ef ]
+"7 ./lcd.h
+[; ;./lcd.h: 7:   void lcdNumberUnit(int value);
+[v _lcdNumberUnit `(v ~T0 @X0 0 ef1`i ]
+"6
+[; ;./lcd.h: 6:   void lcdNumber(int value);
+[v _lcdNumber `(v ~T0 @X0 0 ef1`i ]
+"4
+[; ;./lcd.h: 4:   void lcdChar(char value);
+[v _lcdChar `(v ~T0 @X0 0 ef1`uc ]
+"23 ./adc.h
+[; ;./adc.h: 23:  int adcRead(unsigned int channel);
+[v _adcRead `(i ~T0 @X0 0 ef1`ui ]
+"20 ./rgb.h
+[; ;./rgb.h: 20:  void rgbColor(int led);
+[v _rgbColor `(v ~T0 @X0 0 ef1`i ]
+"16 main.c
+[; ;main.c: 16: void infoGeral(void);
+[v _infoGeral `(v ~T0 @X0 0 ef ]
+"22 ./ssd.h
+[; ;./ssd.h: 22:  void ssdDigit(char val, char pos);
+[v _ssdDigit `(v ~T0 @X0 0 ef2`uc`uc ]
+"23
+[; ;./ssd.h: 23:  void ssdUpdate(void);
+[v _ssdUpdate `(v ~T0 @X0 0 ef ]
+"23 ./pwm.h
+[; ;./pwm.h: 23:  void pwmSet(unsigned char porcento);
+[v _pwmSet `(v ~T0 @X0 0 ef1`uc ]
+"26 ./config.h
+[p x OSC=HS                   ]
+"27
+[p x FCMEN  =  OFF ]
+"28
+[p x IESO  =  OFF ]
+"29
+[p x PWRT  =  OFF ]
+"30
+[p x BOREN  =  OFF ]
+"31
+[p x BORV  =  46 ]
+"32
+[p x WDT=OFF                  ]
+"33
+[p x WDTPS  =  1                ]
+"34
+[p x MCLRE=ON                 ]
+"35
+[p x LPT1OSC  =  OFF ]
+"36
+[p x PBADEN  =  ON ]
+"37
+[p x CCP2MX  =  PORTC ]
+"38
+[p x STVREN  =  OFF ]
+"39
+[p x LVP=OFF                  ]
+"40
+[p x XINST  =  OFF ]
+"41
+[p x DEBUG  =  OFF              ]
+"43
+[p x CP0  =  OFF ]
+"44
+[p x CP1  =  OFF ]
+"45
+[p x CP2  =  OFF ]
+"46
+[p x CP3  =  OFF ]
+"47
+[p x CPB  =  OFF ]
+"48
+[p x CPD  =  OFF ]
+"50
+[p x WRT0  =  OFF ]
+"51
+[p x WRT1  =  OFF ]
+"52
+[p x WRT2  =  OFF ]
+"53
+[p x WRT3  =  OFF ]
+"54
+[p x WRTB  =  OFF ]
+"55
+[p x WRTC  =  OFF ]
+"56
+[p x WRTD  =  OFF ]
+"58
+[p x EBTR0  =  OFF ]
+"59
+[p x EBTR1  =  OFF ]
+"60
+[p x EBTR2  =  OFF ]
+"61
+[p x EBTR3  =  OFF ]
+"62
+[p x EBTRB  =  OFF ]
+"20 main.c
+[; ;main.c: 20: unsigned char tecla,conf=1,prt=1;
+[v _tecla `uc ~T0 @X0 1 e ]
+[v _conf `uc ~T0 @X0 1 e ]
+[i _conf
+-> -> 1 `i `uc
+]
+[v _prt `uc ~T0 @X0 1 e ]
+[i _prt
+-> -> 1 `i `uc
+]
+"21
+[; ;main.c: 21: char num = 0,p[4]={30, 28, 20, 45},pC[4]={32, 32, 32, 32}, buff,
+[v _num `uc ~T0 @X0 1 e ]
+[i _num
+-> -> 0 `i `uc
+]
+[v _p `uc ~T0 @X0 -> 4 `i e ]
+[i _p
+:U ..
+-> -> 30 `i `uc
+-> -> 28 `i `uc
+-> -> 20 `i `uc
+-> -> 45 `i `uc
+..
+]
+[v _pC `uc ~T0 @X0 -> 4 `i e ]
+[i _pC
+:U ..
+-> -> 32 `i `uc
+-> -> 32 `i `uc
+-> -> 32 `i `uc
+-> -> 32 `i `uc
+..
+]
+[v _buff `uc ~T0 @X0 1 e ]
+"22
+[; ;main.c: 22:         tp[4]={60,70,72,97},b2=0,block=0,pG,tpG,tblock;
+[v _tp `uc ~T0 @X0 -> 4 `i e ]
+[i _tp
+:U ..
+-> -> 60 `i `uc
+-> -> 70 `i `uc
+-> -> 72 `i `uc
+-> -> 97 `i `uc
+..
+]
+[v _b2 `uc ~T0 @X0 1 e ]
+[i _b2
+-> -> 0 `i `uc
+]
+[v _block `uc ~T0 @X0 1 e ]
+[i _block
+-> -> 0 `i `uc
+]
+[v _pG `uc ~T0 @X0 1 e ]
+[v _tpG `uc ~T0 @X0 1 e ]
+[v _tblock `uc ~T0 @X0 1 e ]
+"23
+[; ;main.c: 23: int pot,pot1=0,tol;
+[v _pot `i ~T0 @X0 1 e ]
+[v _pot1 `i ~T0 @X0 1 e ]
+[i _pot1
+-> 0 `i
+]
+[v _tol `i ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"25
+[; ;main.c: 25: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"27
+[; ;main.c: 27:     rgbInit();
+[e ( _rgbInit ..  ]
+"28
+[; ;main.c: 28:     ssdInit();
+[e ( _ssdInit ..  ]
+"29
+[; ;main.c: 29:     kpInit();
+[e ( _kpInit ..  ]
+"30
+[; ;main.c: 30:     lcdInit();
+[e ( _lcdInit ..  ]
+"31
+[; ;main.c: 31:     adcInit();
+[e ( _adcInit ..  ]
+"32
+[; ;main.c: 32:     pwmInit();
+[e ( _pwmInit ..  ]
+"34
+[; ;main.c: 34:     lcdString("Aperte o botao s");
+[e ( _lcdString (1 :s 1C ]
+"35
+[; ;main.c: 35:     lcdPosition(1,0);
+[e ( _lcdPosition (2 , -> 1 `i -> 0 `i ]
+"36
+[; ;main.c: 36:     lcdString("para configurar!");
+[e ( _lcdString (1 :s 2C ]
+"38
+[; ;main.c: 38:     for(int i=0; i<70;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 70 `i 2  ]
+[e $U 3  ]
+[e :U 2 ]
+{
+"39
+[; ;main.c: 39:         for(int j=0;j<10;j++){
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 10 `i 5  ]
+[e $U 6  ]
+[e :U 5 ]
+{
+"40
+[; ;main.c: 40:            kpDebounce();
+[e ( _kpDebounce ..  ]
+"41
+[; ;main.c: 41:         if(kpReadKey() == 's'){
+[e $ ! == -> ( _kpReadKey ..  `ui -> 115 `ui 8  ]
+{
+"42
+[; ;main.c: 42:             configuraPSI();
+[e ( _configuraPSI ..  ]
+"43
+[; ;main.c: 43:             num=0;
+[e = _num -> -> 0 `i `uc ]
+"44
+[; ;main.c: 44:         }
+}
+[e :U 8 ]
+"45
+[; ;main.c: 45:         }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 10 `i 5  ]
+[e :U 6 ]
+}
+"46
+[; ;main.c: 46:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 70 `i 2  ]
+[e :U 3 ]
+}
+"47
+[; ;main.c: 47:     conf=0;
+[e = _conf -> -> 0 `i `uc ]
+"48
+[; ;main.c: 48:     instrucaoLCD();
+[e ( _instrucaoLCD ..  ]
+"50
+[; ;main.c: 50:     for(;;){
+{
+[e :U 9 ]
+{
+"52
+[; ;main.c: 52:         comandos();
+[e ( _comandos ..  ]
+"53
+[; ;main.c: 53:         if(prt == 1){
+[e $ ! == -> _prt `i -> 1 `i 12  ]
+{
+"54
+[; ;main.c: 54:             lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"55
+[; ;main.c: 55:             if(num<4){
+[e $ ! < -> _num `i -> 4 `i 13  ]
+{
+"56
+[; ;main.c: 56:                 infoIndividual();
+[e ( _infoIndividual ..  ]
+"57
+[; ;main.c: 57:                 prt = 0;
+[e = _prt -> -> 0 `i `uc ]
+"58
+[; ;main.c: 58:             }
+}
+[e $U 14  ]
+"59
+[; ;main.c: 59:             else if(num == 4){
+[e :U 13 ]
+[e $ ! == -> _num `i -> 4 `i 15  ]
+{
+"60
+[; ;main.c: 60:                 infoPress();
+[e ( _infoPress ..  ]
+"61
+[; ;main.c: 61:                 prt = 0;
+[e = _prt -> -> 0 `i `uc ]
+"62
+[; ;main.c: 62:             }
+}
+[e $U 16  ]
+"63
+[; ;main.c: 63:             else {
+[e :U 15 ]
+{
+"64
+[; ;main.c: 64:                 infoTemp();
+[e ( _infoTemp ..  ]
+"65
+[; ;main.c: 65:                 prt = 0;
+[e = _prt -> -> 0 `i `uc ]
+"66
+[; ;main.c: 66:             }
+}
+[e :U 16 ]
+[e :U 14 ]
+"67
+[; ;main.c: 67:             comandos();
+[e ( _comandos ..  ]
+"68
+[; ;main.c: 68:         }
+}
+[e :U 12 ]
+"69
+[; ;main.c: 69:         teste();
+[e ( _teste ..  ]
+"70
+[; ;main.c: 70:         block=block+1;
+[e = _block -> + -> _block `i -> 1 `i `uc ]
+"71
+[; ;main.c: 71:         if(block == 100){
+[e $ ! == -> _block `i -> 100 `i 17  ]
+{
+"72
+[; ;main.c: 72:             ssdHeat();
+[e ( _ssdHeat ..  ]
+"73
+[; ;main.c: 73:             prt = 1;
+[e = _prt -> -> 1 `i `uc ]
+"74
+[; ;main.c: 74:             block = 0;
+[e = _block -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:             if(p[1]<50 && tblock == 0 )
+[e $ ! && < -> *U + &U _p * -> -> -> 1 `i `ui `ux -> -> # *U &U _p `ui `ux `i -> 50 `i == -> _tblock `i -> 0 `i 18  ]
+"76
+[; ;main.c: 76:                 buff=1;
+[e = _buff -> -> 1 `i `uc ]
+[e $U 19  ]
+"77
+[; ;main.c: 77:             else{
+[e :U 18 ]
+{
+"78
+[; ;main.c: 78:                 buff= -1;
+[e = _buff -> -U -> 1 `i `uc ]
+"79
+[; ;main.c: 79:                 tblock = 1;
+[e = _tblock -> -> 1 `i `uc ]
+"80
+[; ;main.c: 80:             }
+}
+[e :U 19 ]
+"81
+[; ;main.c: 81:             if(p[1]<15 && tblock == 1)
+[e $ ! && < -> *U + &U _p * -> -> -> 1 `i `ui `ux -> -> # *U &U _p `ui `ux `i -> 15 `i == -> _tblock `i -> 1 `i 20  ]
+"82
+[; ;main.c: 82:                 tblock=0;
+[e = _tblock -> -> 0 `i `uc ]
+[e :U 20 ]
+"84
+[; ;main.c: 84:         }
+}
+[e :U 17 ]
+"85
+[; ;main.c: 85:     }
+}
+[e $U 9  ]
+[e :U 10 ]
+}
+"86
+[; ;main.c: 86: }
+[e :UE 1 ]
+}
+"88
+[; ;main.c: 88: void configuraPSI(void){
+[v _configuraPSI `(v ~T0 @X0 1 ef ]
+{
+[e :U _configuraPSI ]
+[f ]
+"89
+[; ;main.c: 89:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"91
+[; ;main.c: 91:     while(conf){
+[e $U 22  ]
+[e :U 23 ]
+{
+"93
+[; ;main.c: 93:         comandos();
+[e ( _comandos ..  ]
+"94
+[; ;main.c: 94:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"96
+[; ;main.c: 96:         if(prt == 1){
+[e $ ! == -> _prt `i -> 1 `i 25  ]
+{
+"97
+[; ;main.c: 97:             prt = 0;
+[e = _prt -> -> 0 `i `uc ]
+"98
+[; ;main.c: 98:             lcdPosition(0,0);
+[e ( _lcdPosition (2 , -> 0 `i -> 0 `i ]
+"99
+[; ;main.c: 99:             lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"100
+[; ;main.c: 100:             lcdString("Aperte S p/ sair");
+[e ( _lcdString (1 :s 3C ]
+"101
+[; ;main.c: 101:             lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"103
+[; ;main.c: 103:             lcdString("Pneu ");
+[e ( _lcdString (1 :s 4C ]
+"104
+[; ;main.c: 104:             lcdNumberUnit(num+1);
+[e ( _lcdNumberUnit (1 + -> _num `i -> 1 `i ]
+"105
+[; ;main.c: 105:             lcdString(": ");
+[e ( _lcdString (1 :s 5C ]
+"106
+[; ;main.c: 106:             pC[num] = pC[num]+buff;
+[e = *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux -> + -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i -> _buff `i `uc ]
+"107
+[; ;main.c: 107:             lcdNumber(pC[num]);
+[e ( _lcdNumber (1 -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i ]
+"108
+[; ;main.c: 108:         }
+}
+[e :U 25 ]
+"110
+[; ;main.c: 110:     kpDebounce();
+[e ( _kpDebounce ..  ]
+"111
+[; ;main.c: 111:     }
+}
+[e :U 22 ]
+"91
+[; ;main.c: 91:     while(conf){
+[e $ != -> _conf `i -> 0 `i 23  ]
+[e :U 24 ]
+"112
+[; ;main.c: 112: }
+[e :UE 21 ]
+}
+"114
+[; ;main.c: 114: void instrucaoLCD(void){
+[v _instrucaoLCD `(v ~T0 @X0 1 ef ]
+{
+[e :U _instrucaoLCD ]
+[f ]
+"115
+[; ;main.c: 115:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"116
+[; ;main.c: 116:     lcdChar(0b01111111);
+[e ( _lcdChar (1 -> -> 127 `i `uc ]
+"117
+[; ;main.c: 117:     lcdString("Prev.");
+[e ( _lcdString (1 :s 6C ]
+"118
+[; ;main.c: 118:     lcdPosition(0,11);
+[e ( _lcdPosition (2 , -> 0 `i -> 11 `i ]
+"119
+[; ;main.c: 119:     lcdString("Next");
+[e ( _lcdString (1 :s 7C ]
+"120
+[; ;main.c: 120:     lcdChar(0b01111110);
+[e ( _lcdChar (1 -> -> 126 `i `uc ]
+"121
+[; ;main.c: 121:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"122
+[; ;main.c: 122:     lcdPosition(1,2);
+[e ( _lcdPosition (2 , -> 1 `i -> 2 `i ]
+"123
+[; ;main.c: 123:     lcdString("L");
+[e ( _lcdString (1 :s 8C ]
+"124
+[; ;main.c: 124:     lcdPosition(1,13);
+[e ( _lcdPosition (2 , -> 1 `i -> 13 `i ]
+"125
+[; ;main.c: 125:     lcdString("R");
+[e ( _lcdString (1 :s 9C ]
+"126
+[; ;main.c: 126:     for(int i=0; i<500;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 500 `i 27  ]
+[e $U 28  ]
+[e :U 27 ]
+{
+"127
+[; ;main.c: 127:         for(int j=0;j<300;j++){}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 300 `i 30  ]
+[e $U 31  ]
+[e :U 30 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 300 `i 30  ]
+[e :U 31 ]
+}
+"128
+[; ;main.c: 128:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 500 `i 27  ]
+[e :U 28 ]
+}
+"129
+[; ;main.c: 129: }
+[e :UE 26 ]
+}
+"131
+[; ;main.c: 131: void comandos(void){
+[v _comandos `(v ~T0 @X0 1 ef ]
+{
+[e :U _comandos ]
+[f ]
+"133
+[; ;main.c: 133: pot = adcRead(0);
+[e = _pot ( _adcRead (1 -> -> 0 `i `ui ]
+"134
+[; ;main.c: 134: tol = 50-(((float)pot/1023)*100);
+[e = _tol -> - -> -> 50 `i `f * / -> _pot `f -> -> 1023 `i `f -> -> 100 `i `f `i ]
+"136
+[; ;main.c: 136: if(pot1 != adcRead(0)){
+[e $ ! != _pot1 ( _adcRead (1 -> -> 0 `i `ui 34  ]
+{
+"137
+[; ;main.c: 137:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"138
+[; ;main.c: 138:     lcdString(" Temp max: ");
+[e ( _lcdString (1 :s 10C ]
+"139
+[; ;main.c: 139:     lcdNumber((100*(1+((float)tol/100))));
+[e ( _lcdNumber (1 -> * -> -> 100 `i `f + -> -> 1 `i `f / -> _tol `f -> -> 100 `i `f `i ]
+"140
+[; ;main.c: 140:     for(int i=0; i<1000;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 35  ]
+[e $U 36  ]
+[e :U 35 ]
+{
+"141
+[; ;main.c: 141:     for(int j=0;j<100;j++){}}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 38  ]
+[e $U 39  ]
+[e :U 38 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 38  ]
+[e :U 39 ]
+}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 35  ]
+[e :U 36 ]
+}
+"142
+[; ;main.c: 142:     pot1 = pot;
+[e = _pot1 _pot ]
+"143
+[; ;main.c: 143: }
+}
+[e :U 34 ]
+"145
+[; ;main.c: 145: kpDebounce();
+[e ( _kpDebounce ..  ]
+"146
+[; ;main.c: 146: if(kpReadKey() == 'U'){
+[e $ ! == -> ( _kpReadKey ..  `ui -> 85 `ui 41  ]
+{
+"147
+[; ;main.c: 147:     buff=1;
+[e = _buff -> -> 1 `i `uc ]
+"148
+[; ;main.c: 148:     prt=1;
+[e = _prt -> -> 1 `i `uc ]
+"149
+[; ;main.c: 149:     for(int i=0; i<1000;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 42  ]
+[e $U 43  ]
+[e :U 42 ]
+{
+"150
+[; ;main.c: 150:     for(int j=0;j<100;j++){}}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 45  ]
+[e $U 46  ]
+[e :U 45 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 45  ]
+[e :U 46 ]
+}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 42  ]
+[e :U 43 ]
+}
+"151
+[; ;main.c: 151: }
+}
+[e $U 48  ]
+"152
+[; ;main.c: 152: else if(kpReadKey() == 'D'){
+[e :U 41 ]
+[e $ ! == -> ( _kpReadKey ..  `ui -> 68 `ui 49  ]
+{
+"153
+[; ;main.c: 153:     buff=-1;
+[e = _buff -> -U -> 1 `i `uc ]
+"154
+[; ;main.c: 154:     prt=1;
+[e = _prt -> -> 1 `i `uc ]
+"155
+[; ;main.c: 155:     for(int i=0; i<1000;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 50  ]
+[e $U 51  ]
+[e :U 50 ]
+{
+"156
+[; ;main.c: 156:     for(int j=0;j<100;j++){}}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 53  ]
+[e $U 54  ]
+[e :U 53 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 53  ]
+[e :U 54 ]
+}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 50  ]
+[e :U 51 ]
+}
+"157
+[; ;main.c: 157: }
+}
+[e $U 56  ]
+"158
+[; ;main.c: 158: else if(kpReadKey() == 'R'){
+[e :U 49 ]
+[e $ ! == -> ( _kpReadKey ..  `ui -> 82 `ui 57  ]
+{
+"159
+[; ;main.c: 159:     buff = 0;
+[e = _buff -> -> 0 `i `uc ]
+"160
+[; ;main.c: 160:     if(conf == 1)
+[e $ ! == -> _conf `i -> 1 `i 58  ]
+"161
+[; ;main.c: 161:         num = (num>2)? 0:num+1;
+[e = _num -> ? > -> _num `i -> 2 `i : -> 0 `i + -> _num `i -> 1 `i `uc ]
+[e $U 59  ]
+"162
+[; ;main.c: 162:     else
+[e :U 58 ]
+"163
+[; ;main.c: 163:         num = (num>4)? 0:num+1;
+[e = _num -> ? > -> _num `i -> 4 `i : -> 0 `i + -> _num `i -> 1 `i `uc ]
+[e :U 59 ]
+"165
+[; ;main.c: 165:     prt=1;
+[e = _prt -> -> 1 `i `uc ]
+"166
+[; ;main.c: 166:     for(int i=0; i<1000;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 60  ]
+[e $U 61  ]
+[e :U 60 ]
+{
+"167
+[; ;main.c: 167:     for(int j=0;j<100;j++){}}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 63  ]
+[e $U 64  ]
+[e :U 63 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 63  ]
+[e :U 64 ]
+}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 60  ]
+[e :U 61 ]
+}
+"168
+[; ;main.c: 168:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"169
+[; ;main.c: 169: }
+}
+[e $U 66  ]
+"170
+[; ;main.c: 170: else if (kpReadKey() == 'L'){
+[e :U 57 ]
+[e $ ! == -> ( _kpReadKey ..  `ui -> 76 `ui 67  ]
+{
+"171
+[; ;main.c: 171:     buff = 0;
+[e = _buff -> -> 0 `i `uc ]
+"172
+[; ;main.c: 172:     if(conf == 1)
+[e $ ! == -> _conf `i -> 1 `i 68  ]
+"173
+[; ;main.c: 173:         num = (num<1)? 3:num-1;
+[e = _num -> ? < -> _num `i -> 1 `i : -> 3 `i - -> _num `i -> 1 `i `uc ]
+[e $U 69  ]
+"174
+[; ;main.c: 174:     else
+[e :U 68 ]
+"175
+[; ;main.c: 175:         num = (num<1)? 5:num-1;
+[e = _num -> ? < -> _num `i -> 1 `i : -> 5 `i - -> _num `i -> 1 `i `uc ]
+[e :U 69 ]
+"177
+[; ;main.c: 177:     prt=1;
+[e = _prt -> -> 1 `i `uc ]
+"178
+[; ;main.c: 178:     for(int i=0; i<1000;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 70  ]
+[e $U 71  ]
+[e :U 70 ]
+{
+"179
+[; ;main.c: 179:     for(int j=0;j<100;j++){}}
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 73  ]
+[e $U 74  ]
+[e :U 73 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 73  ]
+[e :U 74 ]
+}
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 70  ]
+[e :U 71 ]
+}
+"180
+[; ;main.c: 180:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"181
+[; ;main.c: 181: }
+}
+[e $U 76  ]
+"182
+[; ;main.c: 182: else if (kpReadKey() == 'S'){
+[e :U 67 ]
+[e $ ! == -> ( _kpReadKey ..  `ui -> 83 `ui 77  ]
+{
+"183
+[; ;main.c: 183:     conf = 0;
+[e = _conf -> -> 0 `i `uc ]
+"184
+[; ;main.c: 184: }
+}
+[e :U 77 ]
+[e :U 76 ]
+[e :U 66 ]
+[e :U 56 ]
+[e :U 48 ]
+"186
+[; ;main.c: 186: kpDebounce();
+[e ( _kpDebounce ..  ]
+"187
+[; ;main.c: 187: }
+[e :UE 33 ]
+}
+"189
+[; ;main.c: 189: void infoIndividual(void){
+[v _infoIndividual `(v ~T0 @X0 1 ef ]
+{
+[e :U _infoIndividual ]
+[f ]
+"190
+[; ;main.c: 190:     lcdString(" P");
+[e ( _lcdString (1 :s 11C ]
+"191
+[; ;main.c: 191:     lcdNumberUnit(num+1);
+[e ( _lcdNumberUnit (1 + -> _num `i -> 1 `i ]
+"192
+[; ;main.c: 192:     lcdString(" Pres:");
+[e ( _lcdString (1 :s 12C ]
+"193
+[; ;main.c: 193:     lcdNumber(p[num]);
+[e ( _lcdNumber (1 -> *U + &U _p * -> _num `ux -> -> # *U &U _p `ui `ux `i ]
+"194
+[; ;main.c: 194:     lcdString("PSI");
+[e ( _lcdString (1 :s 13C ]
+"195
+[; ;main.c: 195:     lcdPosition(1,1);
+[e ( _lcdPosition (2 , -> 1 `i -> 1 `i ]
+"196
+[; ;main.c: 196:     lcdString(" Temp.:");
+[e ( _lcdString (1 :s 14C ]
+"197
+[; ;main.c: 197:     lcdNumber(tp[num]);
+[e ( _lcdNumber (1 -> *U + &U _tp * -> _num `ux -> -> # *U &U _tp `ui `ux `i ]
+"198
+[; ;main.c: 198:     lcdChar(0b1101111);
+[e ( _lcdChar (1 -> -> 111 `i `uc ]
+"199
+[; ;main.c: 199:     lcdString("C");
+[e ( _lcdString (1 :s 15C ]
+"202
+[; ;main.c: 202:     if(p[num] > 1.5*(pC[num]) || p[num] < 0.7*(pC[num])){
+[e $ ! || > -> -> *U + &U _p * -> _num `ux -> -> # *U &U _p `ui `ux `i `d * .1.5 -> -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i `d < -> -> *U + &U _p * -> _num `ux -> -> # *U &U _p `ui `ux `i `d * .0.7 -> -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i `d 79  ]
+{
+"203
+[; ;main.c: 203:         rgbColor(1);
+[e ( _rgbColor (1 -> 1 `i ]
+"205
+[; ;main.c: 205:     }
+}
+[e $U 80  ]
+"206
+[; ;main.c: 206:     else if(p[num] > 1.3*(pC[num]) || p[num] < 0.9*(pC[num])){
+[e :U 79 ]
+[e $ ! || > -> -> *U + &U _p * -> _num `ux -> -> # *U &U _p `ui `ux `i `d * .1.3 -> -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i `d < -> -> *U + &U _p * -> _num `ux -> -> # *U &U _p `ui `ux `i `d * .0.9 -> -> *U + &U _pC * -> _num `ux -> -> # *U &U _pC `ui `ux `i `d 81  ]
+{
+"207
+[; ;main.c: 207:         rgbColor(3);
+[e ( _rgbColor (1 -> 3 `i ]
+"209
+[; ;main.c: 209:     }
+}
+[e $U 82  ]
+"210
+[; ;main.c: 210:     else{
+[e :U 81 ]
+{
+"211
+[; ;main.c: 211:         rgbColor(2);
+[e ( _rgbColor (1 -> 2 `i ]
+"212
+[; ;main.c: 212:     }
+}
+[e :U 82 ]
+[e :U 80 ]
+"213
+[; ;main.c: 213: }
+[e :UE 78 ]
+}
+"215
+[; ;main.c: 215: void infoPress(void){
+[v _infoPress `(v ~T0 @X0 1 ef ]
+{
+[e :U _infoPress ]
+[f ]
+"216
+[; ;main.c: 216:     lcdString("P1:");
+[e ( _lcdString (1 :s 16C ]
+"217
+[; ;main.c: 217:     lcdNumber(p[0]);
+[e ( _lcdNumber (1 -> *U + &U _p * -> -> -> 0 `i `ui `ux -> -> # *U &U _p `ui `ux `i ]
+"218
+[; ;main.c: 218:     lcdString("    P2:");
+[e ( _lcdString (1 :s 17C ]
+"219
+[; ;main.c: 219:     lcdNumber(p[1]);
+[e ( _lcdNumber (1 -> *U + &U _p * -> -> -> 1 `i `ui `ux -> -> # *U &U _p `ui `ux `i ]
+"220
+[; ;main.c: 220:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"221
+[; ;main.c: 221:     lcdString("P3:");
+[e ( _lcdString (1 :s 18C ]
+"222
+[; ;main.c: 222:     lcdNumber(p[2]);
+[e ( _lcdNumber (1 -> *U + &U _p * -> -> -> 2 `i `ui `ux -> -> # *U &U _p `ui `ux `i ]
+"223
+[; ;main.c: 223:     lcdString("    P4:");
+[e ( _lcdString (1 :s 19C ]
+"224
+[; ;main.c: 224:     lcdNumber(p[3]);
+[e ( _lcdNumber (1 -> *U + &U _p * -> -> -> 3 `i `ui `ux -> -> # *U &U _p `ui `ux `i ]
+"225
+[; ;main.c: 225:     infoGeral();
+[e ( _infoGeral ..  ]
+"226
+[; ;main.c: 226: }
+[e :UE 83 ]
+}
+"228
+[; ;main.c: 228: void infoTemp(void){
+[v _infoTemp `(v ~T0 @X0 1 ef ]
+{
+[e :U _infoTemp ]
+[f ]
+"229
+[; ;main.c: 229:     lcdString("T1:");
+[e ( _lcdString (1 :s 20C ]
+"230
+[; ;main.c: 230:     lcdNumber(tp[0]);
+[e ( _lcdNumber (1 -> *U + &U _tp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tp `ui `ux `i ]
+"231
+[; ;main.c: 231:     lcdString("    T2:");
+[e ( _lcdString (1 :s 21C ]
+"232
+[; ;main.c: 232:     lcdNumber(tp[1]);
+[e ( _lcdNumber (1 -> *U + &U _tp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tp `ui `ux `i ]
+"233
+[; ;main.c: 233:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"234
+[; ;main.c: 234:     lcdString("T3:");
+[e ( _lcdString (1 :s 22C ]
+"235
+[; ;main.c: 235:     lcdNumber(tp[2]);
+[e ( _lcdNumber (1 -> *U + &U _tp * -> -> -> 2 `i `ui `ux -> -> # *U &U _tp `ui `ux `i ]
+"236
+[; ;main.c: 236:     lcdString("    T4:");
+[e ( _lcdString (1 :s 23C ]
+"237
+[; ;main.c: 237:     lcdNumber(tp[3]);
+[e ( _lcdNumber (1 -> *U + &U _tp * -> -> -> 3 `i `ui `ux -> -> # *U &U _tp `ui `ux `i ]
+"238
+[; ;main.c: 238:     infoGeral();
+[e ( _infoGeral ..  ]
+"239
+[; ;main.c: 239: }
+[e :UE 84 ]
+}
+"241
+[; ;main.c: 241: void infoGeral(void){
+[v _infoGeral `(v ~T0 @X0 1 ef ]
+{
+[e :U _infoGeral ]
+[f ]
+"242
+[; ;main.c: 242:     tpG = (int)(tp[0]+tp[1]+tp[2]+tp[3])/4;
+[e = _tpG -> / + + + -> *U + &U _tp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tp `ui `ux `i -> *U + &U _tp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tp `ui `ux `i -> *U + &U _tp * -> -> -> 2 `i `ui `ux -> -> # *U &U _tp `ui `ux `i -> *U + &U _tp * -> -> -> 3 `i `ui `ux -> -> # *U &U _tp `ui `ux `i -> 4 `i `uc ]
+"243
+[; ;main.c: 243: }
+[e :UE 85 ]
+}
+"245
+[; ;main.c: 245: void ssdHeat(void){
+[v _ssdHeat `(v ~T0 @X0 1 ef ]
+{
+[e :U _ssdHeat ]
+[f ]
+"246
+[; ;main.c: 246:     if(num<4){
+[e $ ! < -> _num `i -> 4 `i 87  ]
+{
+"247
+[; ;main.c: 247:         if(tp[num] > (char)(100*(1+((float)tol/100)))){
+[e $ ! > -> *U + &U _tp * -> _num `ux -> -> # *U &U _tp `ui `ux `i -> -> * -> -> 100 `i `f + -> -> 1 `i `f / -> _tol `f -> -> 100 `i `f `uc `i 88  ]
+{
+"248
+[; ;main.c: 248:             ssdDigit(1,0);
+[e ( _ssdDigit (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"249
+[; ;main.c: 249:             ssdDigit(2,1);
+[e ( _ssdDigit (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"250
+[; ;main.c: 250:             ssdDigit(3,2);
+[e ( _ssdDigit (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"251
+[; ;main.c: 251:             ssdDigit(4,3);
+[e ( _ssdDigit (2 , -> -> 4 `i `uc -> -> 3 `i `uc ]
+"252
+[; ;main.c: 252:             for(int i=0; i<100;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 100 `i 89  ]
+[e $U 90  ]
+[e :U 89 ]
+{
+"253
+[; ;main.c: 253:                 ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"254
+[; ;main.c: 254:                 pwmSet(0);
+[e ( _pwmSet (1 -> -> 0 `i `uc ]
+"255
+[; ;main.c: 255:                 for(int j=0;j<10;j++){
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 10 `i 92  ]
+[e $U 93  ]
+[e :U 92 ]
+{
+"256
+[; ;main.c: 256:                     pwmSet(100);
+[e ( _pwmSet (1 -> -> 100 `i `uc ]
+"257
+[; ;main.c: 257:                 }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 10 `i 92  ]
+[e :U 93 ]
+}
+"258
+[; ;main.c: 258:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 100 `i 89  ]
+[e :U 90 ]
+}
+"259
+[; ;main.c: 259:             pwmSet(0);
+[e ( _pwmSet (1 -> -> 0 `i `uc ]
+"260
+[; ;main.c: 260:         }
+}
+[e :U 88 ]
+"261
+[; ;main.c: 261:     }
+}
+[e $U 95  ]
+"262
+[; ;main.c: 262:     else{
+[e :U 87 ]
+{
+"263
+[; ;main.c: 263:         if(tpG > (char)(100*(1+((float)tol/100)))){
+[e $ ! > -> _tpG `i -> -> * -> -> 100 `i `f + -> -> 1 `i `f / -> _tol `f -> -> 100 `i `f `uc `i 96  ]
+{
+"264
+[; ;main.c: 264:             ssdDigit(1,0);
+[e ( _ssdDigit (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"265
+[; ;main.c: 265:             ssdDigit(2,1);
+[e ( _ssdDigit (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"266
+[; ;main.c: 266:             ssdDigit(3,2);
+[e ( _ssdDigit (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"267
+[; ;main.c: 267:             ssdDigit(4,3);
+[e ( _ssdDigit (2 , -> -> 4 `i `uc -> -> 3 `i `uc ]
+"268
+[; ;main.c: 268:             for(int i=0; i<100;i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 100 `i 97  ]
+[e $U 98  ]
+[e :U 97 ]
+{
+"269
+[; ;main.c: 269:                 ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"270
+[; ;main.c: 270:                 pwmSet(0);
+[e ( _pwmSet (1 -> -> 0 `i `uc ]
+"271
+[; ;main.c: 271:                 for(int j=0;j<10;j++){
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 10 `i 100  ]
+[e $U 101  ]
+[e :U 100 ]
+{
+"272
+[; ;main.c: 272:                     pwmSet(100);
+[e ( _pwmSet (1 -> -> 100 `i `uc ]
+"273
+[; ;main.c: 273:                 }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 10 `i 100  ]
+[e :U 101 ]
+}
+"274
+[; ;main.c: 274:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 100 `i 97  ]
+[e :U 98 ]
+}
+"275
+[; ;main.c: 275:             pwmSet(0);
+[e ( _pwmSet (1 -> -> 0 `i `uc ]
+"276
+[; ;main.c: 276:         }
+}
+[e :U 96 ]
+"277
+[; ;main.c: 277:     }
+}
+[e :U 95 ]
+"278
+[; ;main.c: 278: }
+[e :UE 86 ]
+}
+"279
+[; ;main.c: 279: void teste(void){
+[v _teste `(v ~T0 @X0 1 ef ]
+{
+[e :U _teste ]
+[f ]
+"280
+[; ;main.c: 280:     p[0] = buff + p[0];
+[e = *U + &U _p * -> -> -> 0 `i `ui `ux -> -> # *U &U _p `ui `ux -> + -> _buff `i -> *U + &U _p * -> -> -> 0 `i `ui `ux -> -> # *U &U _p `ui `ux `i `uc ]
+"281
+[; ;main.c: 281:     p[1] = buff + p[1];
+[e = *U + &U _p * -> -> -> 1 `i `ui `ux -> -> # *U &U _p `ui `ux -> + -> _buff `i -> *U + &U _p * -> -> -> 1 `i `ui `ux -> -> # *U &U _p `ui `ux `i `uc ]
+"282
+[; ;main.c: 282:     p[2] = buff + p[2];
+[e = *U + &U _p * -> -> -> 2 `i `ui `ux -> -> # *U &U _p `ui `ux -> + -> _buff `i -> *U + &U _p * -> -> -> 2 `i `ui `ux -> -> # *U &U _p `ui `ux `i `uc ]
+"283
+[; ;main.c: 283:     p[3] = buff + p[3];
+[e = *U + &U _p * -> -> -> 3 `i `ui `ux -> -> # *U &U _p `ui `ux -> + -> _buff `i -> *U + &U _p * -> -> -> 3 `i `ui `ux -> -> # *U &U _p `ui `ux `i `uc ]
+"284
+[; ;main.c: 284:     tp[0] = buff + tp[0];
+[e = *U + &U _tp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tp `ui `ux -> + -> _buff `i -> *U + &U _tp * -> -> -> 0 `i `ui `ux -> -> # *U &U _tp `ui `ux `i `uc ]
+"285
+[; ;main.c: 285:     tp[1] = buff + tp[1];
+[e = *U + &U _tp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tp `ui `ux -> + -> _buff `i -> *U + &U _tp * -> -> -> 1 `i `ui `ux -> -> # *U &U _tp `ui `ux `i `uc ]
+"286
+[; ;main.c: 286:     tp[2] = buff + tp[2];
+[e = *U + &U _tp * -> -> -> 2 `i `ui `ux -> -> # *U &U _tp `ui `ux -> + -> _buff `i -> *U + &U _tp * -> -> -> 2 `i `ui `ux -> -> # *U &U _tp `ui `ux `i `uc ]
+"287
+[; ;main.c: 287:     tp[3] = buff + tp[3];
+[e = *U + &U _tp * -> -> -> 3 `i `ui `ux -> -> # *U &U _tp `ui `ux -> + -> _buff `i -> *U + &U _tp * -> -> -> 3 `i `ui `ux -> -> # *U &U _tp `ui `ux `i `uc ]
+"288
+[; ;main.c: 288:     buff = 0;
+[e = _buff -> -> 0 `i `uc ]
+"289
+[; ;main.c: 289: }
+[e :UE 103 ]
+}
+[a 7C 78 101 120 116 0 ]
+[a 1C 65 112 101 114 116 101 32 111 32 98 111 116 97 111 32 115 0 ]
+[a 3C 65 112 101 114 116 101 32 83 32 112 47 32 115 97 105 114 0 ]
+[a 9C 82 0 ]
+[a 11C 32 80 0 ]
+[a 8C 76 0 ]
+[a 13C 80 83 73 0 ]
+[a 15C 67 0 ]
+[a 12C 32 80 114 101 115 58 0 ]
+[a 23C 32 32 32 32 84 52 58 0 ]
+[a 19C 32 32 32 32 80 52 58 0 ]
+[a 22C 84 51 58 0 ]
+[a 18C 80 51 58 0 ]
+[a 21C 32 32 32 32 84 50 58 0 ]
+[a 17C 32 32 32 32 80 50 58 0 ]
+[a 20C 84 49 58 0 ]
+[a 16C 80 49 58 0 ]
+[a 14C 32 84 101 109 112 46 58 0 ]
+[a 6C 80 114 101 118 46 0 ]
+[a 2C 112 97 114 97 32 99 111 110 102 105 103 117 114 97 114 33 0 ]
+[a 4C 80 110 101 117 32 0 ]
+[a 10C 32 84 101 109 112 32 109 97 120 58 32 0 ]
+[a 5C 58 32 0 ]
