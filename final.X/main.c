@@ -45,7 +45,7 @@ void main(void) {
         }
     }
     conf=0;
-    instrucaoLCD(); // instrução para navegar no menu principal
+    instrucaoLCD(); // instruÃ§Ã£o para navegar no menu principal
     
     for(;;){ //loop principal
         
@@ -139,6 +139,7 @@ if(pot1 != adcRead(0)){
     lcdNumber((100*(1+((float)tol/100))));
     for(int i=0; i<1000;i++){
     for(int j=0;j<100;j++){}}
+    lcdCommand(0x01);
     pot1 = pot;
 }
 
